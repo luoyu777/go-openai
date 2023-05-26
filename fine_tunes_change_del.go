@@ -110,7 +110,7 @@ func (c *Client) GetFineTune(ctx context.Context, fineTuneID string) (response F
 }
 
 func (c *Client) DeleteFineTune(ctx context.Context, fineTuneID string) (response FineTuneDeleteResponse, err error) {
-	req, err := c.requestBuilder.build(ctx, http.MethodDelete, c.fullURL("/fine-tunes/"+fineTuneID), nil)
+	req, err := c.requestBuilder.build(ctx, http.MethodDelete, c.fullURL("/models/"+fineTuneID), nil)
 	if err != nil {
 		return
 	}
